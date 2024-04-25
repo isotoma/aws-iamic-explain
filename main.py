@@ -76,6 +76,8 @@ def account_assignments(args):
                     principal_name = users[principal_id]
                 elif principal_type == 'GROUP':
                     principal_name = groups[principal_id]
+                else:
+                    raise Exception(f'Unknown principal type {principal_type}')
 
                 csv_output.append([account_id, account_name, permission_set_arn, permission_set_name, principal_type, principal_id, principal_name])
 
